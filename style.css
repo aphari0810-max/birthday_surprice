@@ -1,0 +1,455 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #ffeaf2, #ffd7e7, #fff0f5);
+    color: #63364b;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* PAGE SETTINGS */
+
+.page {
+    display: none;
+    min-height: 100vh;
+    width: 100%;
+    padding: 35px 18px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.page.active {
+    display: flex;
+    animation: pageAppear 0.7s ease;
+}
+
+@keyframes pageAppear {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    font-family: "Dancing Script", cursive;
+    font-size: clamp(2.3rem, 7vw, 3.6rem);
+    color: #c74378;
+    margin: 8px 0 15px;
+}
+
+p {
+    line-height: 1.8;
+}
+
+.small-heading {
+    font-size: 1rem;
+    color: #a64e76;
+    font-weight: 500;
+}
+
+.welcome-content,
+.gallery-content,
+.letter-content,
+.final-content,
+.blessing-content {
+    width: 100%;
+    max-width: 650px;
+    margin: auto;
+}
+
+.welcome-message,
+.gallery-message {
+    font-size: 1.05rem;
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+
+/* FLOATING HEARTS BACKGROUND */
+
+.hearts-background {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.floating-heart {
+    position: absolute;
+    bottom: -40px;
+    color: #ed78a4;
+    opacity: 0.55;
+    animation: floatHeart linear infinite;
+    filter: drop-shadow(0 2px 4px #f49abc40);
+    user-select: none;
+}
+
+@keyframes floatHeart {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.55;
+    }
+
+    85% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateY(-115vh) rotate(35deg);
+        opacity: 0;
+    }
+}
+
+
+/* PAGE 1: KRISHNA AND SURPRISE BUTTON */
+
+.krishna-stage {
+    position: relative;
+    width: min(100%, 420px);
+    height: 350px;
+    margin: 20px auto 0;
+}
+
+.krishna-image {
+    width: 280px;
+    height: auto;
+    object-fit: contain;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    display: block;
+    margin: 0 auto;
+}
+
+.surprise-button {
+    position: absolute;
+    left: 55%;
+    top: 57%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+
+    border: 1px solid #fff4f8;
+    border-radius: 35px;
+    padding: 15px 23px;
+
+    background: linear-gradient(135deg, #ff8db7, #e94f8b);
+    color: white;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 0.98rem;
+    font-weight: 600;
+
+    box-shadow: 0 0 12px #f47aa9, 0 0 28px #f47aa980;
+    cursor: pointer;
+    white-space: nowrap;
+
+    animation: buttonBlink 1.5s ease-in-out infinite;
+    transition: left 0.3s ease, top 0.3s ease;
+}
+
+@keyframes buttonBlink {
+    0%, 100% {
+        box-shadow: 0 0 10px #f47aa9, 0 0 20px #f47aa980;
+        filter: brightness(1);
+    }
+
+    50% {
+        box-shadow: 0 0 20px #ff5e9c, 0 0 38px #ff5e9c;
+        filter: brightness(1.12);
+    }
+}
+
+.surprise-button:active {
+    transform: translate(-50%, -50%) scale(0.96);
+}
+
+.hint-message {
+    min-height: 35px;
+    margin-top: 5px;
+    font-size: 1rem;
+    color: #a34470;
+}
+
+
+/* GENERAL BUTTONS */
+
+.main-button,
+.secondary-button {
+    border: none;
+    border-radius: 30px;
+    padding: 13px 22px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.main-button {
+    margin-top: 25px;
+    background: linear-gradient(135deg, #f47eaa, #df4c83);
+    color: white;
+    box-shadow: 0 5px 16px #c94b7c35;
+}
+
+.main-button:hover,
+.secondary-button:hover {
+    transform: translateY(-2px);
+}
+
+.secondary-button {
+    background: #ffd0e1;
+    color: #9a3f68;
+    padding: 10px 16px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* PAGE 2: PHOTO GALLERY */
+
+.gallery-content {
+    max-width: 550px;
+}
+
+.photo-frame {
+    width: min(100%, 370px);
+    height: 390px;
+    margin: 25px auto 12px;
+
+    border: 5px solid #fff8fb;
+    border-radius: 22px;
+    overflow: hidden;
+
+    background: #ffd2e2;
+    box-shadow: 0 8px 24px #a8466b25;
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.photo-caption {
+    font-size: 1.05rem;
+    color: #9c426b;
+    margin: 10px 0 18px;
+}
+
+.gallery-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+#photoCounter {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #914063;
+    min-width: 45px;
+}
+
+.gallery-hint {
+    font-size: 0.95rem;
+    margin-top: 20px;
+    color: #a34d73;
+}
+
+
+/* PAGE 3: BIRTHDAY LETTER */
+
+.letter-content {
+    max-width: 680px;
+}
+
+.letter-text {
+    margin: 22px auto 5px;
+    text-align: left;
+    font-size: 1.05rem;
+    line-height: 1.9;
+}
+
+.letter-text p {
+    margin-bottom: 17px;
+}
+
+.signature {
+    font-family: "Dancing Script", cursive;
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #c74378;
+    text-align: right;
+    line-height: 1.5;
+    margin-top: 25px;
+}
+
+
+/* PAGE 4: FINAL LOVE MESSAGE */
+
+.final-page,
+.final-blessing-page {
+    background: linear-gradient(145deg, #ffe6ef, #ffd2e3);
+}
+
+.final-content {
+    max-width: 620px;
+}
+
+.heart-decoration {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.final-message {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    margin: 25px auto;
+    max-width: 540px;
+}
+
+.final-signature {
+    font-family: "Dancing Script", cursive;
+    color: #c74378;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+
+/* PAGE 5: KRISHNA BLESSING */
+
+.blessing-content {
+    max-width: 700px;
+    text-align: center;
+}
+.blessing-image {
+    display: block;
+    width: 100%;
+    max-width: 520px;
+    max-height: 62vh;
+    object-fit: contain;
+    margin: 0 auto 20px;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    filter: none;
+}
+.birthday-wish {
+    font-family: "Dancing Script", cursive;
+    font-size: clamp(2.1rem, 7vw, 3.4rem);
+    line-height: 1.3;
+    color: #c74378;
+    margin: 15px 0;
+}
+
+.blessing-message {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin: 12px auto;
+    max-width: 520px;
+}
+
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 600px) {
+    .page {
+        padding: 25px 16px;
+    }
+
+    .welcome-message,
+    .gallery-message {
+        font-size: 0.98rem;
+    }
+
+    .krishna-stage {
+        height: 310px;
+        max-width: 350px;
+    }
+
+    .surprise-button {
+        font-size: 0.88rem;
+        padding: 12px 17px;
+    }
+
+    .photo-frame {
+        height: min(65vh, 390px);
+        max-height: 390px;
+    }
+
+    .gallery-controls {
+        gap: 8px;
+    }
+
+    .secondary-button {
+        font-size: 0.85rem;
+        padding: 10px 12px;
+    }
+
+    .letter-text {
+        font-size: 1rem;
+    }
+
+    .final-message,
+    .blessing-message {
+        font-size: 1.02rem;
+    }
+
+    .blessing-image {
+        max-height: 52vh;
+    }
+}
+
+@media (max-width: 360px) {
+    .krishna-stage {
+        height: 270px;
+    }
+
+    .gallery-controls {
+        gap: 5px;
+    }
+
+    .secondary-button {
+        font-size: 0.78rem;
+        padding: 9px 10px;
+    }
+}
+
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+    }
+}
