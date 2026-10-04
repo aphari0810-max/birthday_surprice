@@ -81,19 +81,19 @@ surpriseButton.addEventListener("click", () => {
 
 const memories = [
     {
-        src: "images/photo1.jpg",
+        src: "./photo1.jpg",
         caption: "Your smile makes everything beautiful. 💗"
     },
     {
-        src: "images/photo2.jpg",
+        src: "./photo2.jpg",
         caption: "A little moment I want to remember forever. 🌸"
     },
     {
-        src: "images/photo3.jpg",
+        src: "./photo3.jpg",
         caption: "My favorite person, always. 🥹"
     },
     {
-        src: "images/photo4.jpg",
+        src: "./photo4.jpg",
         caption: "More beautiful memories are waiting for you. 💞"
     }
 ];
