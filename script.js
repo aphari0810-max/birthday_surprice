@@ -20,7 +20,7 @@ const heartsBackground = document.getElementById("heartsBackground");
 const heartSymbols = ["♥", "♡", "💕", "💗"];
 
 function createFloatingHearts() {
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 30; i++) {
         const heart = document.createElement("span");
 
         heart.className = "floating-heart";
